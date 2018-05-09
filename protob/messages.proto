@@ -1461,9 +1461,10 @@ message DebugLinkFlashErase {
  * Request: Generate PrivateKey, split it and erase.
  */
  message GetShamirSecrets {
-	optional uint32 sector = 1;
+	required uint32 shares = 1;
+	required uint32 necessary_shares = 2;
 }
 
 message ShamirSecrets {
-	optional uint32 sector = 1;
+	repeated bytes secrets = 1;
 }
