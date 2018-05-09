@@ -132,6 +132,10 @@ enum MessageType {
 	MessageType_StellarManageDataOp = 220 [(wire_in) = true];
 	MessageType_StellarBumpSequenceOp = 221 [(wire_in) = true];
 	MessageType_StellarSignedTx = 230 [(wire_out) = true];
+
+	// RNC
+	MessageType_GetShamirSecrets = 999 [(wire_in) = true];
+	MessageType_ShamirSecrets = 998 [(wire_out) = true];
 }
 
 ////////////////////
@@ -1446,5 +1450,20 @@ message DebugLinkMemoryWrite {
  * WARNING: Writing to the wrong location can irreparably break the device.
  */
 message DebugLinkFlashErase {
+	optional uint32 sector = 1;
+}
+
+
+/////////////////////////////////////////////////////////////
+// RiddleAndCode                                           //
+/////////////////////////////////////////////////////////////
+/**
+ * Request: Generate PrivateKey, split it and erase.
+ */
+ message GetShamirSecrets {
+	optional uint32 sector = 1;
+}
+
+message ShamirSecrets {
 	optional uint32 sector = 1;
 }
