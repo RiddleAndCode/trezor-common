@@ -1465,6 +1465,17 @@ message DebugLinkFlashErase {
 	required uint32 necessary_shares = 2;
 }
 
+/**
+ * Response: Returns all the secrets.
+ */
 message ShamirSecrets {
 	repeated bytes secrets = 1;
+}
+
+/**
+ * Request: Sends shares to generate a key to sign a future transaction.
+ */
+message PrepareShamirSign {
+	required uint32 num_shares = 1;
+	repeated bytes secrets = 2;
 }
