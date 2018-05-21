@@ -1462,15 +1462,25 @@ message DebugLinkFlashErase {
  * Request: Generate PrivateKey, split it and erase.
  */
  message GetShamirSecrets {
-	required uint32 shares = 1;
+	required uint32 num_shares = 1;
 	required uint32 necessary_shares = 2;
+	required bool generate_new = 3;
+	repeated bytes public_keys = 4;
+}
+
+message ShamirShare {
+	required bytes secret = 1;
+	required bytes symmetric_key = 2;
+	required bytes public_key = 3;
 }
 
 /**
  * Response: Returns all the secrets.
  */
 message ShamirSecrets {
-	repeated bytes secrets = 1;
+	repeated ShamirShare shares = 1;
+	required bytes chain_code = 2;
+	required bytes root_public_key = 3;
 }
 
 /**
