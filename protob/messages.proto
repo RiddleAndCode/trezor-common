@@ -137,6 +137,7 @@ enum MessageType {
 	MessageType_GetShamirSecrets = 999 [(wire_in) = true];
 	MessageType_ShamirSecrets = 998 [(wire_out) = true];
 	MessageType_PrepareShamirSign = 997 [(wire_in) = true];
+	MessageType_ShamirShare = 996 [(wire_in) = true];
 }
 
 ////////////////////
