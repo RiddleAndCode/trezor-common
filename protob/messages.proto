@@ -1482,7 +1482,7 @@ message StoreShamirShare {
  * Response: Returns all the secrets.
  */
 message ShamirSecrets {
-	repeated ShamirShare shares = 1;
+	repeated StoreShamirShare shares = 1;
 	required bytes chain_code = 2;
 	required bytes root_public_key = 3;
 }
