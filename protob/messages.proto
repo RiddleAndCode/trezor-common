@@ -137,7 +137,10 @@ enum MessageType {
 	MessageType_GetShamirSecrets = 999 [(wire_in) = true];
 	MessageType_ShamirSecrets = 998 [(wire_out) = true];
 	MessageType_PrepareShamirSign = 997 [(wire_in) = true];
-	MessageType_ShamirShare = 996 [(wire_in) = true];
+	MessageType_StoreShamirShare = 996 [(wire_in) = true];
+	MessageType_GetShamirShare = 995 [(wire_in) = true];
+	MessageType_ShamirShare = 994 [(wire_out) = true];
+
 }
 
 ////////////////////
@@ -1469,7 +1472,7 @@ message DebugLinkFlashErase {
 	repeated bytes public_keys = 4;
 }
 
-message ShamirShare {
+message StoreShamirShare {
 	required bytes secret = 1;
 	required bytes symmetric_key = 2;
 	required bytes public_key = 3;
@@ -1484,10 +1487,16 @@ message ShamirSecrets {
 	required bytes root_public_key = 3;
 }
 
+message GetShamirShare {
+}
+
+message ShamirShare {
+	required bytes share = 1;
+}
+
 /**
  * Request: Sends shares to generate a key to sign a future transaction.
  */
 message PrepareShamirSign {
-	required uint32 num_shares = 1;
-	repeated bytes secrets = 2;
+	repeated bytes shares = 1;
 }
