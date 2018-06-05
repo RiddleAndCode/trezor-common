@@ -1477,6 +1477,7 @@ message StoreShamirShare {
 	required bytes symmetric_key = 2;
 	required bytes public_key = 3;
 	required bytes chain_code = 4;
+	optional bytes mnemonic_half = 5;
 }
 
 /**
