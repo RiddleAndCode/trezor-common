@@ -1590,5 +1590,5 @@ message ShamirShare {
  */
 message PrepareShamirSign { 
 	repeated ShamirShare shares = 1; 
-	required TransactionType tx = 1;
+	required TransactionType tx = 2;
 }
