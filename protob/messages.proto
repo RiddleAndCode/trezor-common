@@ -1575,20 +1575,21 @@ message ShamirSecrets {
   required bytes root_public_key = 3;
 }
 
-message GetShamirShare { 
-	required TransactionType tx = 1;
-
+message GetShamirShare {
+  required TransactionType tx = 1;
+  required string coin_name = 2
+      [ default = 'Bitcoin' ];
 }
 
-message ShamirShare { 
-	required bytes share = 1;
-	required bytes hashed_tx = 2;
+message ShamirShare {
+  required bytes share = 1;
+  required bytes hashed_tx = 2;
 }
 
 /**
  * Request: Sends shares to generate a key to sign a future transaction.
  */
-message PrepareShamirSign { 
-	repeated ShamirShare shares = 1; 
-	required TransactionType tx = 2;
+message PrepareShamirSign {
+  repeated ShamirShare shares = 1;
+  required TransactionType tx = 2;
 }
