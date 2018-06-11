@@ -1579,6 +1579,9 @@ message GetShamirShare {
   required TransactionType tx = 1;
   required string coin_name = 2
       [ default = 'Bitcoin' ];
+  required bool first = 3;
+  required bool last = 4;
+
 }
 
 message ShamirShare {
