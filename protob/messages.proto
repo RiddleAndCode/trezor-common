@@ -1598,5 +1598,4 @@ message PrepareShamirSign {
 message HashTransaction { 
   required TransactionType tx = 1; 
   required bool first = 2;
-  required bool last = 3;
 }
