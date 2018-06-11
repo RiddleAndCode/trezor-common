@@ -1598,5 +1598,7 @@ message HashTransaction {
   required TransactionType tx = 1; 
   required bool first = 2;
   required string coin_name = 3 [ default = 'Bitcoin' ];
+  required bool prep_sig = 4;
+
   
 }
