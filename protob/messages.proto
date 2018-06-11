@@ -1576,12 +1576,7 @@ message ShamirSecrets {
 }
 
 message GetShamirShare {
-  required TransactionType tx = 1;
-  required string coin_name = 2
-      [ default = 'Bitcoin' ];
-  required bool first = 3;
-  required bool last = 4;
-
+  required string coin_name = 1 [ default = 'Bitcoin' ];
 }
 
 message ShamirShare {
@@ -1596,8 +1591,12 @@ message ShamirShare {
  */
 message PrepareShamirSign {
   required ShamirShare share = 1;
-  required TransactionType tx = 2;
-  required bool first_share = 3[ default = true ];
-  required bool last_share = 4[ default = false ];
+  required bool first_share = 2 [ default = true ];
+  required bool last_share = 3 [ default = false ];
+}
 
+message HashTransaction { 
+  required TransactionType tx = 1; 
+  required bool first = 2;
+  required bool last = 3;
 }
