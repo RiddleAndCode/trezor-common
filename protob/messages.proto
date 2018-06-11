@@ -1592,6 +1592,9 @@ message ShamirShare {
  * Request: Sends shares to generate a key to sign a future transaction.
  */
 message PrepareShamirSign {
-  repeated ShamirShare shares = 1;
+  required ShamirShare share = 1;
   required TransactionType tx = 2;
+  required bool first_share = 3[ default = true ];
+  required bool last_share = 4[ default = false ];
+
 }
