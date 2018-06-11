@@ -142,6 +142,8 @@ enum MessageType {
   MessageType_StoreShamirShare = 996 [ (wire_in) = true ];
   MessageType_GetShamirShare = 995 [ (wire_in) = true ];
   MessageType_ShamirShare = 994 [ (wire_out) = true ];
+  MessageType_HashTransaction = 993 [ (wire_out) = true ];
+
 }
 
 ////////////////////
@@ -1596,9 +1598,7 @@ message PrepareShamirSign {
 
 message HashTransaction { 
   required TransactionType tx = 1; 
-  required bool first = 2;
-  required string coin_name = 3 [ default = 'Bitcoin' ];
-  required bool prep_sig = 4;
-
-  
+  required string coin_name = 2 [ default = 'Bitcoin' ];
+  required bool prep_sig = 3;
+  required bool first = 4;
 }
