@@ -1597,9 +1597,9 @@ message PrepareShamirSign {
 }
 
 message HashTransaction { 
-  optional TxInputType input = 1; 
-  optional TxOutputType output = 2; 
-  required string coin_name = 3 [ default = 'Bitcoin' ];
-  required bool prep_sig = 4;
-  required bool first = 5;
+  required string coin_name = 1 [ default = 'Bitcoin' ];
+  required bool prep_sig = 2;
+  required bool first = 3;
+  optional TxInputType input = 5; 
+  optional TxOutputType output = 4; 
 }
