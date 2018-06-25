@@ -1,0 +1,12 @@
+cd ../..
+git add vendor
+git commit -m "updated trezor common"
+git push origin master
+cd ../..
+git add trezor
+git commit -m "updated trezor"
+git push origin ucrypto-trezor
+cd ../../
+git add libraries
+git commit -m "updated ucrypto"
+git push origin master
