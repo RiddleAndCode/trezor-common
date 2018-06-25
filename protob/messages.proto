@@ -1562,11 +1562,12 @@ message StoreShamirShare {
   required bytes secret = 1;
   required bytes secret_tag = 2;
   required bytes symmetric_key = 3;
-  required bytes iv = 4;
-  required bytes public_key = 5;
-  required bytes chain_code = 6;
-  optional bytes mnemonic_half = 7;
-  optional bytes shamir_public_key = 8;
+  required bytes symmetric_key_tag = 4;
+  required bytes iv = 5;
+  required bytes public_key = 6;
+  required bytes chain_code = 7;
+  optional bytes mnemonic_half = 8;
+  optional bytes shamir_public_key = 9;
 }
 
 /**
