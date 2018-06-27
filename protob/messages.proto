@@ -1584,11 +1584,12 @@ message GetShamirShare {}
 message ShamirShare {
   required bytes share = 1;
   required bytes share_tag = 2;
-  required bytes hashed_tx = 3;
-  required bytes hashed_tx_tag = 4;
-  required bytes iv = 5;
-  required bytes signature = 6;
-  required bytes public_key = 7;
+  required bytes share_iv = 3;
+  required bytes hashed_tx = 4;
+  required bytes hashed_tx_tag = 5;
+  required bytes iv = 6;
+  required bytes signature = 7;
+  required bytes public_key = 8;
 }
 
 /**
