@@ -413,6 +413,7 @@ message GetAddress {
   optional InputScriptType script_type = 5
       [ default = SPENDADDRESS ]; // used to distinguish between various address
                                   // formats (non-segwit, segwit, etc.)
+  optional bool shamir = 6;
 }
 
 /**
