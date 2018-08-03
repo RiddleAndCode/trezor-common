@@ -46,7 +46,7 @@ enum MessageType {
   MessageType_ApplyFlags = 28 [ (wire_in) = true ];
   MessageType_GetAddress = 29 [ (wire_in) = true ];
   MessageType_Address = 30 [ (wire_out) = true ];
-  MessageType_SelfTest = 32 [ (wire_in) = true ];
+  MessageType_SelfTest = 32 [ (wire_in) = true, (wire_bootloader) = true ];
   MessageType_BackupDevice = 34 [ (wire_in) = true ];
   MessageType_EntropyRequest = 35 [ (wire_out) = true ];
   MessageType_EntropyAck = 36 [ (wire_in) = true ];
@@ -143,6 +143,7 @@ enum MessageType {
   MessageType_GetShamirShare = 995 [ (wire_in) = true ];
   MessageType_ShamirShare = 994 [ (wire_out) = true ];
   MessageType_HashTransaction = 993 [ (wire_in) = true ];
+  MessageType_TestDevice = 992 [ (wire_in) = true ];
 }
 
 ////////////////////
@@ -1608,4 +1609,8 @@ message HashTransaction {
   required bool first = 3;
   optional TxInputType input = 5;
   optional TxOutputType output = 4;
+}
+
+message TestDevice {
+  optional bytes data = 1;
 }
