@@ -46,7 +46,7 @@ enum MessageType {
   MessageType_ApplyFlags = 28 [ (wire_in) = true ];
   MessageType_GetAddress = 29 [ (wire_in) = true ];
   MessageType_Address = 30 [ (wire_out) = true ];
-  MessageType_SelfTest = 32 [ (wire_in) = true, (wire_bootloader) = true ];
+  MessageType_SelfTest = 32 [ (wire_in) = true ];
   MessageType_BackupDevice = 34 [ (wire_in) = true ];
   MessageType_EntropyRequest = 35 [ (wire_out) = true ];
   MessageType_EntropyAck = 36 [ (wire_in) = true ];
