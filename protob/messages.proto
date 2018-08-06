@@ -1558,6 +1558,7 @@ message GetShamirSecrets {
   required uint32 necessary_shares = 2;
   required bool generate_new = 3;
   repeated bytes public_keys = 4;
+  optional string mnemonic = 5;
 }
 
 message StoreShamirShare {
