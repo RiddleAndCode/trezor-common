@@ -143,7 +143,8 @@ enum MessageType {
   MessageType_GetShamirShare = 995 [ (wire_in) = true ];
   MessageType_ShamirShare = 994 [ (wire_out) = true ];
   MessageType_HashTransaction = 993 [ (wire_in) = true ];
-  MessageType_TestDevice = 992 [ (wire_in) = true ];
+  MessageType_HashEthereumTransaction = 992 [ (wire_in) = true ];
+  MessageType_TestDevice = 991 [ (wire_in) = true ];
 }
 
 ////////////////////
@@ -1609,14 +1610,15 @@ message HashTransaction {
   required bool prep_sig = 1;
   required bool first = 2;
   required string coin_name = 3 [ default = 'Bitcoin' ];
-
-  // Bitcoin-like
   optional TxInputType input = 4;
   optional TxOutputType output = 5;
+}
 
-  // Ethereum
-  optional EthereumSignTx tx = 6;
-  optional EthereumTxAck data = 7;
+message HashEthereumTransaction {
+  required bool prep_sig = 1;
+  required bool first = 2;
+  optional EthereumSignTx tx = 3;
+  optional EthereumTxAck data = 4;
 }
 
 message TestDevice { optional bytes data = 1; }
