@@ -21,8 +21,10 @@
   "slip44": 156,
   "segwit": true,
   "decred": false,
-  "forkid": 79,
+  "fork_id": 79,
   "force_bip143": true,
+  "bip115": false,
+  "version_group_id": null,
   "default_fee_b": {
     "Low": 10,
     "Economy": 70,
@@ -31,11 +33,16 @@
   },
   "dust_limit": 546,
   "blocktime_seconds": 600,
-  "address_prefix": "bitcoingold:",
+  "uri_prefix": "bitcoingold",
   "min_address_length": 27,
   "max_address_length": 34,
-  "bitcore": [
-    "https://btg-bitcore2.trezor.io"
+  "bitcore": [],
+  "blockbook": [
+    "https://btg1.trezor.io",
+    "https://btg2.trezor.io",
+    "https://btg3.trezor.io",
+    "https://btg4.trezor.io",
+    "https://btg5.trezor.io"
   ],
-  "blockbook": []
+  "cooldown": 100
 }

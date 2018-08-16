@@ -21,8 +21,10 @@
   "slip44": 136,
   "segwit": false,
   "decred": false,
-  "forkid": null,
+  "fork_id": null,
   "force_bip143": false,
+  "bip115": false,
+  "version_group_id": null,
   "default_fee_b": {
     "Low": 1,
     "Economy": 10,
@@ -31,11 +33,12 @@
   },
   "dust_limit": 546,
   "blocktime_seconds": 600,
-  "address_prefix": "zcoin:",
+  "uri_prefix": "zcoin",
   "min_address_length": 27,
   "max_address_length": 34,
   "bitcore": [
     "https://insight.zcoin.io"
   ],
-  "blockbook": []
+  "blockbook": [],
+  "cooldown": 100
 }

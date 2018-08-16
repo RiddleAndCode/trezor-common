@@ -2,12 +2,12 @@
   "coin_name": "Koto",
   "coin_shortcut": "KOTO",
   "coin_label": "Koto",
-  "website": "https://koto.cash",
-  "github": "https://github.com/koto-dev/koto",
-  "maintainer": "WO <wo@kotocoin.info>",
+  "website": "https://ko-to.org",
+  "github": "https://github.com/KotoDevelopers/koto",
+  "maintainer": "WO <wo@ko-to.org>",
   "curve_name": "secp256k1",
-  "address_type": 7352,
-  "address_type_p2sh": 7357,
+  "address_type": 6198,
+  "address_type_p2sh": 6203,
   "maxfee_kb": 1000000,
   "minfee_kb": 1000,
   "signed_message_header": "Koto Signed Message:\n",
@@ -21,18 +21,21 @@
   "slip44": 510,
   "segwit": false,
   "decred": false,
-  "forkid": null,
+  "fork_id": null,
   "force_bip143": false,
+  "bip115": false,
+  "version_group_id": 48748912,
   "default_fee_b": {
     "Normal": 10
   },
   "dust_limit": 546,
   "blocktime_seconds": 60,
-  "address_prefix": "koto:",
+  "uri_prefix": "koto",
   "min_address_length": 35,
   "max_address_length": 95,
   "bitcore": [
     "https://insight.kotocoin.info"
   ],
-  "blockbook": []
+  "blockbook": [],
+  "cooldown": 100
 }
