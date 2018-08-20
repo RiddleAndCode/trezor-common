@@ -13,4 +13,4 @@ combine:
 	$(MAKE) combined.pb
 
 clean:
-	rm -f *.pb
+	rm -f *.pb combined.proto
