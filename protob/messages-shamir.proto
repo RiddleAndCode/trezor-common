@@ -14,73 +14,71 @@ import "messages-ethereum.proto";
 /**
  * Request: Generate PrivateKey, split it and erase.
  */
- message GetShamirSecrets {
-    required uint32 num_shares = 1;
-    required uint32 necessary_shares = 2;
-    required bool generate_new = 3;
-    repeated bytes public_keys = 4;
-    optional string mnemonic = 5;
-  }
-  
-  message StoreShamirShare {
-    required bytes secret = 1;
-    required bytes secret_tag = 2;
-    required bytes symmetric_key = 3;
-    required bytes symmetric_key_tag = 4;
-    required bytes iv = 5;
-    required bytes public_key = 6;
-    required bytes chain_code = 7;
-    optional bytes mnemonic_half = 8;
-    optional bytes shamir_public_key = 9;
-  }
-  
-  /**
-   * Response: Returns all the secrets.
-   */
-  
-  
-  message ShamirSecrets {
-    repeated StoreShamirShare shares = 1;
-    required bytes chain_code = 2;
-    required bytes root_public_key = 3;
-  }
-  
-  message GetShamirShare {}
-  
-  message ShamirShare {
-    required bytes share = 1;
-    required bytes share_tag = 2;
-    required bytes share_iv = 3;
-    required bytes hashed_tx = 4;
-    required bytes hashed_tx_tag = 5;
-    required bytes iv = 6;
-    required bytes signature = 7;
-    required bytes public_key = 8;
-  }
-  
-  /**
-   * Request: Sends shares to generate a key to sign a future transaction.
-   */
-  message PrepareShamirSign {
-    required ShamirShare share = 1;
-    required bool first_share = 2 [ default = true ];
-    required bool last_share = 3 [ default = false ];
-  }
-  
-  message HashTransaction {
-    required bool prep_sig = 1;
-    required bool first = 2;
-    required string coin_name = 3 [ default = 'Bitcoin' ];
-    optional TxAck.TransactionType.TxInputType input = 4;
-    optional TxAck.TransactionType.TxOutputType output = 5;
-  }
-  
-  message HashEthereumTransaction {
-    required bool prep_sig = 1;
-    required bool first = 2;
-    optional EthereumSignTx tx = 3;
-    optional EthereumTxAck data = 4;
-  }
+message GetShamirSecrets {
+  required uint32 num_shares = 1;
+  required uint32 necessary_shares = 2;
+  required bool generate_new = 3;
+  repeated bytes public_keys = 4;
+  optional string mnemonic = 5;
+}
 
-  message CloneShare{}
-  
+message StoreShamirShare {
+  required bytes secret = 1;
+  required bytes secret_tag = 2;
+  required bytes symmetric_key = 3;
+  required bytes symmetric_key_tag = 4;
+  required bytes iv = 5;
+  required bytes public_key = 6;
+  required bytes chain_code = 7;
+  optional bytes mnemonic_half = 8;
+  optional bytes shamir_public_key = 9;
+}
+
+/**
+ * Response: Returns all the secrets.
+ */
+
+message ShamirSecrets {
+  repeated StoreShamirShare shares = 1;
+  required bytes chain_code = 2;
+  required bytes root_public_key = 3;
+}
+
+message GetShamirShare {}
+
+message ShamirShare {
+  required bytes share = 1;
+  required bytes share_tag = 2;
+  required bytes share_iv = 3;
+  required bytes hashed_tx = 4;
+  required bytes hashed_tx_tag = 5;
+  required bytes iv = 6;
+  required bytes signature = 7;
+  required bytes public_key = 8;
+}
+
+/**
+ * Request: Sends shares to generate a key to sign a future transaction.
+ */
+message PrepareShamirSign {
+  required ShamirShare share = 1;
+  required bool first_share = 2 [ default = true ];
+  required bool last_share = 3 [ default = false ];
+}
+
+message HashTransaction {
+  required bool prep_sig = 1;
+  required bool first = 2;
+  required string coin_name = 3 [ default = 'Bitcoin' ];
+  optional TxAck.TransactionType.TxInputType input = 4;
+  optional TxAck.TransactionType.TxOutputType output = 5;
+}
+
+message HashEthereumTransaction {
+  required bool prep_sig = 1;
+  required bool first = 2;
+  optional EthereumSignTx tx = 3;
+  optional EthereumTxAck data = 4;
+}
+
+message CloneShare { repeated bytes public_keys = 1; }
