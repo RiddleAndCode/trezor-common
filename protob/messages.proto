@@ -240,6 +240,7 @@ enum MessageType {
   MessageType_HashTransaction = 993 [ (wire_in) = true ];
   MessageType_HashEthereumTransaction = 992 [ (wire_in) = true ];
   MessageType_TestDevice = 991 [ (wire_in) = true ];
+  MessageType_CloneShare = 990 [ (wire_in) = true ];
 }
 
 message TestDevice { optional bytes data = 1; }

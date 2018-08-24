@@ -81,3 +81,6 @@ import "messages-ethereum.proto";
     optional EthereumSignTx tx = 3;
     optional EthereumTxAck data = 4;
   }
+
+  message CloneShare{}
+  
