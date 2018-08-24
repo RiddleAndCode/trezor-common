@@ -82,3 +82,12 @@ message HashEthereumTransaction {
 }
 
 message CloneShare { repeated bytes public_keys = 1; }
+
+message ReplyCloneShare { 
+  required ShamirSecrets share = 1;
+  repeated bytes family = 2; }
+
+message ImportShamirFamily {
+  repeated bytes family = 1;
+}
+  
