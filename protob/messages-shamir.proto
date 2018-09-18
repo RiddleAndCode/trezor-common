@@ -83,8 +83,7 @@ message HashEthereumTransaction {
 
 message HashRippleTransaction {
   required bool prep_sig = 1;
-  required bool first = 2;
-  optional RippleSignTx tx = 3;
+  optional RippleSignTx tx = 2;
 }
 
 message CloneShare { repeated bytes public_keys = 1; }
