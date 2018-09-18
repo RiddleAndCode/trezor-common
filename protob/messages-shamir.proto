@@ -81,6 +81,12 @@ message HashEthereumTransaction {
   optional EthereumTxAck data = 4;
 }
 
+message HashRippleTransaction {
+  required bool prep_sig = 1;
+  required bool first = 2;
+  optional RippleSignTx tx = 3;
+}
+
 message CloneShare { repeated bytes public_keys = 1; }
 
 message ReplyCloneShare { 

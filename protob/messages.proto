@@ -206,7 +206,7 @@ enum MessageType {
   MessageType_RippleGetAddress = 400 [ (wire_in) = true ];
   MessageType_RippleAddress = 401 [ (wire_out) = true ];
   MessageType_RippleSignTx = 402 [ (wire_in) = true ];
-  MessageType_RippleSignedTx = 403 [ (wire_in) = true ];
+  MessageType_RippleSignedTx = 403 [ (wire_out) = true ];
 
   // Monero
   MessageType_MoneroTransactionSignRequest = 501 [ (wire_in) = true ];
@@ -243,6 +243,7 @@ enum MessageType {
   MessageType_CloneShare = 990 [ (wire_in) = true ];
   MessageType_ReplyCloneShare = 989 [ (wire_out) = true ];
   MessageType_ImportShamirFamily = 988 [ (wire_in) = true ];
+  MessageType_HashRippleTransaction = 987 [ (wire_in) = true ];
 }
 
 message TestDevice { optional bytes data = 1; }
