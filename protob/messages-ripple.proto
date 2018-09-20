@@ -31,12 +31,11 @@ message RippleAddress {
  */
 message RippleSignTx {
 	repeated uint32 address_n = 1;				// BIP-32 path. For compatibility with other wallets, must be m/44'/144'/index'
-	required bool testnet = 2;
-	optional uint64 fee = 3;					// fee (in drops) for the transaction
-	optional uint32 flags = 4;					// transaction flags
-	optional uint32 sequence = 5;				// transaction sequence number
-	optional uint32 last_ledger_sequence = 6;	// see https://developers.ripple.com/reliable-transaction-submission.html#lastledgersequence
-	optional RipplePayment payment = 7;			// Payment transaction type
+	optional uint64 fee = 2;					// fee (in drops) for the transaction
+	optional uint32 flags = 3;					// transaction flags
+	optional uint32 sequence = 4;				// transaction sequence number
+	optional uint32 last_ledger_sequence = 5;	// see https://developers.ripple.com/reliable-transaction-submission.html#lastledgersequence
+	optional RipplePayment payment = 6;			// Payment transaction type
 
 	/**
 	 * Payment transaction type
