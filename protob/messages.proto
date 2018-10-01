@@ -244,6 +244,15 @@ enum MessageType {
   MessageType_ReplyCloneShare = 989 [ (wire_out) = true ];
   MessageType_ImportShamirFamily = 988 [ (wire_in) = true ];
   MessageType_HashRippleTransaction = 987 [ (wire_in) = true ];
+
+  //iota-trezor
+  MessageType_IotaGetAddressCounter = 899 [(wire_in) = true];
+  MessageType_IotaAddressCounter = 898 [(wire_out) = true];
+  MessageType_IotaSetAddressCounter = 897 [(wire_in) = true];
+  MessageType_IotaGetAddress = 896 [(wire_in) = true];
+  MessageType_IotaAddress = 895 [(wire_out) = true];
+  MessageType_IotaTxRequest = 894 [(wire_in) = true];
+  MessageType_IotaSignedTx = 893 [(wire_out) = true];
 }
 
 message TestDevice { optional bytes data = 1; }
