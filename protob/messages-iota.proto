@@ -57,4 +57,5 @@ message IotaSignedTx {
 	optional string bundle_hash = 1;			// Bundle hash (hash of all transaction elements)
 	optional string first_signature = 2;		// First signature (security level 1)
 	optional string second_signature = 3;		// Second signature (security level 2)		
+	optional string tx = 4;		// Second signature (security level 2)		
 }
