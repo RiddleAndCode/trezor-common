@@ -29,3 +29,8 @@ message IotaSignedTx {
 	optional string bundle_hash = 1;			// Bundle hash (hash of all transaction elements)
 	optional string tx = 2;		// Second signature (security level 2)		
 }
+
+message IotaAddress {
+	optional uint32 address_index = 1;
+	optional string address = 2;
+}

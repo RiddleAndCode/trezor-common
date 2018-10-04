@@ -247,6 +247,8 @@ enum MessageType {
   MessageType_IotaGetAddress = 986 [(wire_in) = true];
   MessageType_IotaTxRequest = 985 [(wire_in) = true];
   MessageType_IotaSignedTx = 984 [(wire_out) = true];
+  MessageType_IotaAddress = 983 [(wire_out) = true];
+
 }
 
 message TestDevice { optional bytes data = 1; }
