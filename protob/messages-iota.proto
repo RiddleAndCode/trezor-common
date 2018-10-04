@@ -2,40 +2,11 @@
 // Iota messages //
 ///////////////////
 /**
- * Request: Get address counter
- * @next IotaAddressCounter
- */
- message IotaGetAddressCounter {
-}
-/**
- * Returns the address counter as currently set in storage
- * @prev IotaGetAddressCounter
- */
-message IotaAddressCounter {
-	optional uint32 address_counter = 1;
-}
-/**
- * Request: Set address counter to storage
- * @next Success
- * @next Failure
- */
-message IotaSetAddressCounter {
-	optional uint32 address_counter = 1;
-}
-/**
  * Request: Ask device for a public address
  * @next IotaAddress
  */
 message IotaGetAddress {
 	optional uint32 address_index = 1;
-}
-/**
- * Response: Contains public address
- * @prev IotaGetAddress
- */
-message IotaAddress {
-	optional uint32 address_index = 1;
-	optional string address = 2;
 }
 /**
  * Request: Approve a value transfer.
@@ -48,6 +19,7 @@ message IotaTxRequest {
 	optional uint64 balance = 3;					// Balance on the current address (to calculate remainder)
 	optional uint64 timestamp = 4;					// Timestamp to be used for the transaction
 	optional string tag = 5;						// Transaction tag, defaults to 'TREZOR'
+	optional string index = 6;						
 }
 /**
  * Response: Transaction hash and signatures
@@ -55,7 +27,5 @@ message IotaTxRequest {
  */
 message IotaSignedTx {
 	optional string bundle_hash = 1;			// Bundle hash (hash of all transaction elements)
-	optional string first_signature = 2;		// First signature (security level 1)
-	optional string second_signature = 3;		// Second signature (security level 2)		
-	optional string tx = 4;		// Second signature (security level 2)		
+	optional string tx = 2;		// Second signature (security level 2)		
 }
