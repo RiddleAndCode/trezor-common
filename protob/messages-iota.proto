@@ -1,0 +1,36 @@
+///////////////////
+// Iota messages //
+///////////////////
+/**
+ * Request: Ask device for a public address
+ * @next IotaAddress
+ */
+message IotaGetAddress {
+	optional uint32 address_index = 1;
+}
+/**
+ * Request: Approve a value transfer.
+ * @next IotaSignedTx
+ * @next Failure
+ */
+message IotaTxRequest {
+	optional string receiving_address = 1;			// Address to which the amount is send
+	optional uint64 transfer_amount = 2;			// Amount of iota to be transferred
+	optional uint64 balance = 3;					// Balance on the current address (to calculate remainder)
+	optional uint64 timestamp = 4;					// Timestamp to be used for the transaction
+	optional string tag = 5;						// Transaction tag, defaults to 'TREZOR'
+	optional uint32 index = 6;						
+}
+/**
+ * Response: Transaction hash and signatures
+ * @prev IotaTxRequest
+ */
+message IotaSignedTx {
+	optional string bundle_hash = 1;			// Bundle hash (hash of all transaction elements)
+	optional string tx = 2;		// Second signature (security level 2)		
+}
+
+message IotaAddress {
+	optional uint32 address_index = 1;
+	optional string address = 2;
+}
