@@ -265,10 +265,10 @@ message CurveSignMessage {
     repeated uint32 address_n = 1;   // BIP-32 path to derive the key from master node
     required bytes message = 2;      // message to be signed
     optional string curve_name = 3;  // curve to be used                
-    optional string hashing = 4; // hashing to be done over message
+    optional uint32 hashing = 4; // hashing to be done over message (0 - SHA256 | 1 - BLAKE256)
 }
 
 message CurveSignedMessage {
-    optional string address = 1;    // address used to sign the message
+    optional string public_key = 1;    // address used to sign the message
     optional bytes signature = 2;   // signature of the message
 }
