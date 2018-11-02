@@ -248,7 +248,27 @@ enum MessageType {
   MessageType_IotaTxRequest = 985 [(wire_in) = true];
   MessageType_IotaSignedTx = 984 [(wire_out) = true];
   MessageType_IotaAddress = 983 [(wire_out) = true];
+  MessageType_CurveSignMessage = 982 [(wire_in) = true];
+  MessageType_CurveSignedMessage = 981 [(wire_out) = true];
 
 }
 
 message TestDevice { optional bytes data = 1; }
+
+/**
+ * Request: Ask device to sign message
+ * @start
+ * @next CurveSignMessage
+ * @next Failure
+ */
+message CurveSignMessage {
+    repeated uint32 address_n = 1;   // BIP-32 path to derive the key from master node
+    required bytes message = 2;      // message to be signed
+    optional string curve_name = 3;  // curve to be used                
+    optional string hashing = 4; // hashing to be done over message
+}
+
+message CurveSignedMessage {
+    optional string address = 1;    // address used to sign the message
+    optional bytes signature = 2;   // signature of the message
+}
