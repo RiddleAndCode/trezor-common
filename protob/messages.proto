@@ -270,5 +270,5 @@ message CurveSignMessage {
 
 message CurveSignedMessage {
     optional string public_key = 1;    // address used to sign the message
-    optional bytes signature = 2;   // signature of the message
+    optional string signature = 2;   // signature of the message
 }
