@@ -44,17 +44,34 @@ message ShamirSecrets {
   required bytes root_public_key = 3;
 }
 
-message GetShamirShare {}
+message GetShamirShare {
+  repeated uint32 start_address_n = 1;         // For generating hardened paths: if not present -> signature purposes
+  repeated uint32 end_address_n = 2;     // For generateing hardened paths: if not present -> signature purposes
+}
 
 message ShamirShare {
   required bytes share = 1;
   required bytes share_tag = 2;
   required bytes share_iv = 3;
-  required bytes hashed_tx = 4;
-  required bytes hashed_tx_tag = 5;
+  required bytes hashed_obj = 4;
+  required bytes hashed_obj_tag = 5;
   required bytes iv = 6;
   required bytes signature = 7;
   required bytes public_key = 8;
+}
+
+/**
+ * Request: Sends shares to generate a key to generate addresses from bulk paths
+ */
+ message ShamirBulkGetAddress {
+  required ShamirShare share = 1;
+  required bool first_share = 2 [ default = true ];
+  required bool last_share = 3 [ default = false ];
+}
+
+message ShamirBulkAddresses {
+  repeated bytes addresses = 1;
+  required bool last = 2 [ default = false ];
 }
 
 /**
