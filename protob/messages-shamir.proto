@@ -68,6 +68,8 @@ message ShamirShare {
   required ShamirShare share = 1;
   required bool first_share = 2 [ default = true ];
   required bool last_share = 3 [ default = false ];
+  repeated uint32 start_address_n = 4;
+  repeated uint32 end_address_n = 5;
 }
 
 message ShamirBulkAddresses {
