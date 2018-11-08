@@ -45,8 +45,9 @@ message ShamirSecrets {
 }
 
 message GetShamirShare {
-  repeated uint32 start_address_n = 1;         // For generating hardened paths: if not present -> signature purposes
-  repeated uint32 end_address_n = 2;     // For generateing hardened paths: if not present -> signature purposes
+  optional bool path = 1;
+  repeated uint32 start_address_n = 2;         // For generating hardened paths: if not present -> signature purposes
+  repeated uint32 end_address_n = 3;     // For generateing hardened paths: if not present -> signature purposes
 }
 
 message ShamirShare {
