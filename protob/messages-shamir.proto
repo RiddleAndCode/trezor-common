@@ -70,6 +70,7 @@ message ShamirShare {
   required bool last_share = 3 [ default = false ];
   repeated uint32 start_address_n = 4;
   repeated uint32 end_address_n = 5;
+  required string coin_name = 6 [default='Bitcoin'];
 }
 
 message ShamirBulkAddresses {
