@@ -54,7 +54,7 @@ message ShamirShare {
   required bytes share = 1;
   required bytes share_tag = 2;
   required bytes share_iv = 3;
-  required bytes hashed_obj = 4;
+  required bytes hashed_obj = 4;  
   required bytes hashed_obj_tag = 5;
   required bytes iv = 6;
   required bytes signature = 7;
@@ -116,5 +116,7 @@ message ImportShamirFamily {
   repeated bytes family = 1;
 }
 
-message SendNextPackage(){}
+message SendNextPackage {
+
+}
   
