@@ -115,4 +115,6 @@ message ReplyCloneShare {
 message ImportShamirFamily {
   repeated bytes family = 1;
 }
+
+message SendNextPackage(){}
   
