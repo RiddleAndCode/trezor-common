@@ -46,8 +46,9 @@ message ShamirSecrets {
 
 message GetShamirShare {
   optional bool path = 1;
-  repeated uint32 start_address_n = 2;         // For generating hardened paths: if not present -> signature purposes
-  repeated uint32 end_address_n = 3;     // For generateing hardened paths: if not present -> signature purposes
+  optional bytes public_key = 2;
+  repeated uint32 start_address_n = 3;         // For generating hardened paths: if not present -> signature purposes
+  repeated uint32 end_address_n = 4;     // For generateing hardened paths: if not present -> signature purposes
 }
 
 message ShamirShare {
@@ -59,6 +60,7 @@ message ShamirShare {
   required bytes iv = 6;
   required bytes signature = 7;
   required bytes public_key = 8;
+  required bytes tag = 9;
 }
 
 /**
