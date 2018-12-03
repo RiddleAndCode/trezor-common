@@ -15,20 +15,20 @@ import "messages-ethereum.proto";
  * Request: Generate PrivateKey, split it and erase.
  */
 message GetShamirSecrets {
-  required uint32 num_shares = 1;
-  required uint32 necessary_shares = 2;
-  required bool generate_new = 3;
-  repeated bytes public_keys = 4;
+  repeated EphemeralPack slaves = 1;
+  required uint32 num_shares = 2;
+  required uint32 necessary_shares = 3;
+  required bool generate_new = 4;
   optional string mnemonic = 5;
 }
 
 message StoreShamirShare {
-  required bytes secret = 1;
-  required bytes secret_tag = 2;
-  required bytes symmetric_key = 3;
-  required bytes symmetric_key_tag = 4;
-  required bytes iv = 5;
-  required bytes public_key = 6;
+  required EphemeralPack master = 1;
+  required bytes secret = 2;
+  required bytes secret_tag = 3;
+  required bytes symmetric_key = 4;
+  required bytes symmetric_key_tag = 5;
+  required bytes iv = 6;
   required bytes chain_code = 7;
   optional bytes mnemonic_half = 8;
   optional bytes shamir_public_key = 9;
@@ -45,21 +45,21 @@ message ShamirSecrets {
 }
 
 message GetShamirShare {
-  optional bool path = 1;
-  optional bytes public_key = 2;
+  optional EphemeralPack master = 1;
+  optional bool path = 2;
   repeated uint32 start_address_n = 3;         // For generating hardened paths: if not present -> signature purposes
   repeated uint32 end_address_n = 4;     // For generateing hardened paths: if not present -> signature purposes
 }
 
 message ShamirShare {
-  required bytes share = 1;
-  required bytes share_tag = 2;
-  required bytes share_iv = 3;
-  required bytes hashed_obj = 4;  
-  required bytes hashed_obj_tag = 5;
-  required bytes iv = 6;
-  required bytes signature = 7;
-  required bytes public_key = 8;
+  required EphemeralPack slave = 1;
+  required bytes share = 2;
+  required bytes share_tag = 3;
+  required bytes share_iv = 4;
+  required bytes hashed_obj = 5;  
+  required bytes hashed_obj_tag = 6;
+  required bytes iv = 7;
+  required bytes signature = 8;
   required bytes tag = 9;
 }
 
@@ -78,6 +78,10 @@ message ShamirShare {
 message ShamirBulkAddresses {
   repeated bytes addresses = 1;
   required bool last = 2 [ default = false ];
+}
+
+// Expects EphemeralPack
+message GenerateEphemeralShamir {
 }
 
 /**
