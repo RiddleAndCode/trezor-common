@@ -32,7 +32,6 @@ message StoreShamirShare {
   required bytes chain_code = 7;
   optional bytes mnemonic_half = 8;
   optional bytes shamir_public_key = 9;
-  required bytes public_key = 10;
 }
 
 /**
