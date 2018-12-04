@@ -253,7 +253,8 @@ enum MessageType {
   MessageType_ShamirBulkGetAddress = 980 [(wire_in) = true];
   MessageType_ShamirBulkAddresses = 979 [(wire_out) = true];
   MessageType_SendNextPackage = 978 [(wire_in) = true, (wire_tiny) = true];
-
+  MessageType_GenerateEphemeralShamir = 977  [(wire_in) = true];
+  MessageType_EphemeralPack = 976 [(wire_out) = true];
 }
 
 message TestDevice { optional bytes data = 1; }

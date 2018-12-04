@@ -65,6 +65,11 @@ message SignedIdentity {
     optional bytes signature = 3;   // signature of the identity data
 }
 
+message EphemeralPack {
+    required bytes public_key = 1;
+    required bytes eph_public_key = 2;
+    required bytes signature = 3;
+}
 /**
  * Request: Ask device to generate ECDH session key
  * @start
@@ -73,10 +78,8 @@ message SignedIdentity {
  */
 message GetECDHSessionKey {
     optional IdentityType identity = 1;     // identity
-    optional bytes peer_public_key = 2;     // peer's public key
-    optional bytes ephemeral_public_key = 3;
-    optional bytes ephemeral_signature = 4;
-    optional string ecdsa_curve_name = 5;   // ECDSA curve name to use
+    optional string ecdsa_curve_name = 2;   // ECDSA curve name to use
+    required EphemeralPack ephemeral = 3;
 }
 
 /**
@@ -85,8 +88,7 @@ message GetECDHSessionKey {
  */
 message ECDHSessionKey {
     optional bytes dev_public_key = 1;
-    optional bytes ephemeral_public_key = 2;
-    optional bytes ephemeral_signature = 3;
+    required EphemeralPack ephemeral = 2;
 }
 
 /**
