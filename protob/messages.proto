@@ -255,6 +255,8 @@ enum MessageType {
   MessageType_SendNextPackage = 978 [(wire_in) = true, (wire_tiny) = true];
   MessageType_GenerateEphemeralShamir = 977  [(wire_in) = true];
   MessageType_EphemeralPack = 976 [(wire_out) = true];
+  MessageType_PutSeed = 975 [(wire_in) = true];
+  
 }
 
 message TestDevice { optional bytes data = 1; }
