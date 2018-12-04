@@ -127,3 +127,8 @@ message ImportShamirFamily {
 message SendNextPackage {
 
 }
+
+message PutSeed {
+  required bytes seed = 1;
+  required bool lock = 2;
+}
