@@ -23,7 +23,7 @@ message GetShamirSecrets {
 }
 
 message StoreShamirShare {
-  optional EphemeralPack master = 1;
+  required EphemeralPack master = 1;
   required bytes secret = 2;
   required bytes secret_tag = 3;
   required bytes symmetric_key = 4;
