@@ -114,6 +114,11 @@ message HashRippleTransaction {
   optional RippleSignTx tx = 2;
 }
 
+message HashStellarTransaction {
+  required bool prep_sig = 1;
+  optional StellarSignTx tx = 2;
+}
+
 message CloneShare { repeated bytes public_keys = 1; }
 
 message ReplyCloneShare { 

@@ -256,7 +256,8 @@ enum MessageType {
   MessageType_GenerateEphemeralShamir = 977  [(wire_in) = true];
   MessageType_EphemeralPack = 976 [(wire_out) = true];
   MessageType_PutSeed = 975 [(wire_in) = true];
-  
+  MessageType_HashStellarTransaction = 974 [ (wire_in) = true ];
+
 }
 
 message TestDevice { optional bytes data = 1; }
