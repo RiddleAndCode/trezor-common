@@ -34,6 +34,8 @@
   "min_address_length": 27,
   "max_address_length": 34,
   "bitcore": [],
-  "blockbook": [],
+  "blockbook": [
+    "https://bchsv1.trezor.io"
+  ],
   "cooldown": 100
 }
