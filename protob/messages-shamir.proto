@@ -74,11 +74,18 @@ message ShamirShare {
   repeated uint32 start_address_n = 4;
   repeated uint32 end_address_n = 5;
   required string coin_name = 6 [default='Bitcoin'];
+  optional bool proof = 7;
+}
+
+message ShamirBulkProof{
+  required bytes public_key = 1;
+  required bytes signature = 2;
 }
 
 message ShamirBulkAddresses {
   repeated bytes addresses = 1;
   required bool last = 2 [ default = false ];
+  optional ShamirBulkProof proof = 3;
 }
 
 // Expects EphemeralPack
