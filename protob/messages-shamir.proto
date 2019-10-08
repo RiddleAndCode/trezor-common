@@ -85,7 +85,7 @@ message ShamirBulkProof{
 message ShamirBulkAddresses {
   repeated bytes addresses = 1;
   required bool last = 2 [ default = false ];
-  optional ShamirBulkProof proof = 3;
+  repeated ShamirBulkProof proof = 3;
 }
 
 // Expects EphemeralPack
