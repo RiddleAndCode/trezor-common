@@ -1,0 +1,38 @@
+syntax = "proto2";
+package hw.trezor.messages.elements;
+
+/**
+ * Request: Address at the specified index
+ * @start
+ * @next ElementsConfidentialAddress
+ */
+message ElementsGetConfidentialAddress {
+	repeated uint32 address_n = 1; // BIP-32 path.
+    required bool mainnet = 2 [default=true];
+}
+
+/**
+ * Response: Address for the given index
+ * @end
+ */
+message ElementsConfidentialAddress {
+	required string address = 1;
+}
+
+/**
+ * Request: ask device to sign Elements transaction
+ * @start
+ * @next ElementsSignedTx
+ */
+message ElementsSignTx {
+	repeated uint32 address_n = 1;				// BIP-32 path.
+	required uint64 fee = 2;					// fee (in drops).
+}
+
+/**
+ * Response: signed tx
+ * @end
+ */
+message ElementsSignedTx {
+	required bytes serialized_tx = 1;
+}
