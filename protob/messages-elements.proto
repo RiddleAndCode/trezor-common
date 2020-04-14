@@ -19,6 +19,19 @@ message ElementsConfidentialAddress {
 	required string address = 1;
 }
 
+message ElementsBlindedTransaction {
+    required bytes tx = 1;
+}
+
+message ElementsGetUTXOValue {
+  required ElementsBlindedTransaction transaction = 1;
+  repeated uint32 address_n = 2;
+  required bool mainnet = 3 [default=true];
+}
+
+message ElementsUTXOValue {
+  required uint64 value = 1;
+}
 /**
  * Request: ask device to sign Elements transaction
  * @start
