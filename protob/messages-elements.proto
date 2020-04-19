@@ -32,6 +32,18 @@ message ElementsGetUTXOValue {
 message ElementsUTXOValue {
   required uint64 value = 1;
 }
+
+message ElementsInputTx {
+  required bytes txid = 1;
+  required bytes transaction = 2;
+  required uint32 vout = 3;
+}
+
+message ElementsOutputTx {
+  required string destination_address = 1;
+  required uint64 value = 2;
+}
+
 /**
  * Request: ask device to sign Elements transaction
  * @start
@@ -40,12 +52,16 @@ message ElementsUTXOValue {
 message ElementsSignTx {
 	repeated uint32 address_n = 1;				// BIP-32 path.
 	required uint64 fee = 2;					// fee (in drops).
+    repeated ElementsInputTx inputs = 3;
+    repeated ElementsOutputTx outputs = 4;
+    required bool mainnet = 5 [default=true];
 }
+
 
 /**
  * Response: signed tx
  * @end
  */
 message ElementsSignedTx {
-	required bytes serialized_tx = 1;
+	required bytes transaction = 1;
 }
