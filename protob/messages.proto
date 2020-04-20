@@ -261,11 +261,13 @@ enum MessageType {
 
   MessageType_ElementsGetConfidentialAddress = 972 [ (wire_in) = true ];
   MessageType_ElementsConfidentialAddress = 971 [ (wire_out) = true ];
-  MessageType_ElementsSignTx = 970 [ (wire_in) = true ];
-  MessageType_ElementsSignedTx = 969 [ (wire_out) = true ];
-  MessageType_ElementsGetUTXOValue = 968 [ (wire_in) = true ];
-  MessageType_ElementsUTXOValue = 967 [ (wire_out) = true ];
- // MessageType_ElementsBlindedTransaction = [ (wire_out) = true ]
+  MessageType_ElementsStartTx = 970 [ (wire_in) = true ];
+  MessageType_ElementsInputTx = 969 [ (wire_in) = true ];
+  MessageType_ElementsOutputTx = 968 [ (wire_in) = true ];
+  MessageType_ElementsSignTx = 967 [ (wire_in) = true ];
+  MessageType_ElementsSignedTx = 966 [ (wire_out) = true ];
+  MessageType_ElementsGetUTXOValue = 965 [ (wire_in) = true ];
+  MessageType_ElementsUTXOValue = 964 [ (wire_out) = true ];
 }
 
 message TestDevice { optional bytes data = 1; }

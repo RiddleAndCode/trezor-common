@@ -34,9 +34,12 @@ message ElementsUTXOValue {
 }
 
 message ElementsInputTx {
-  required bytes txid = 1;
-  required bytes transaction = 2;
-  required uint32 vout = 3;
+  repeated uint32 address_n = 1;
+  required uint64 fee = 2;
+  required bool mainnet = 3 [default=true];
+  required bytes txid = 4;
+  required bytes transaction = 5;
+  required uint32 vout = 6;
 }
 
 message ElementsOutputTx {
@@ -52,11 +55,11 @@ message ElementsOutputTx {
 message ElementsSignTx {
 	repeated uint32 address_n = 1;				// BIP-32 path.
 	required uint64 fee = 2;					// fee (in drops).
-    repeated ElementsInputTx inputs = 3;
-    repeated ElementsOutputTx outputs = 4;
-    required bool mainnet = 5 [default=true];
+    required bool mainnet = 3 [default=true];
 }
 
+message ElementsStartTx {
+}
 
 /**
  * Response: signed tx
