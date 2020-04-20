@@ -35,16 +35,19 @@ message ElementsUTXOValue {
 
 message ElementsInputTx {
   repeated uint32 address_n = 1;
-  required uint64 fee = 2;
-  required bool mainnet = 3 [default=true];
-  required bytes txid = 4;
-  required bytes transaction = 5;
-  required uint32 vout = 6;
+  required bool mainnet = 2 [default=true];
+  required bytes txid = 3;
+  required bytes transaction = 4;
+  required uint32 vout = 5;
 }
 
 message ElementsOutputTx {
   required string destination_address = 1;
   required uint64 value = 2;
+}
+
+message ElementsHashTx {
+  required bool prep_sig = 1;
 }
 
 /**
