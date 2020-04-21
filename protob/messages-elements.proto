@@ -39,11 +39,13 @@ message ElementsInputTx {
   required bytes txid = 3;
   required bytes transaction = 4;
   required uint32 vout = 5;
+  required bool prep_sig = 6 [default=false];
 }
 
 message ElementsOutputTx {
   required string destination_address = 1;
   required uint64 value = 2;
+  required bool prep_sig = 3 [default=false];
 }
 
 message ElementsHashTx {
