@@ -25,8 +25,9 @@ message ElementsBlindedTransaction {
 
 message ElementsGetUTXOValue {
   required ElementsBlindedTransaction transaction = 1;
-  repeated uint32 address_n = 2;
-  required bool mainnet = 3 [default=true];
+  required bytes asset = 2;
+  repeated uint32 address_n = 3;
+  required bool mainnet = 4 [default=true];
 }
 
 message ElementsUTXOValue {
