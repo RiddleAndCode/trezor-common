@@ -230,6 +230,7 @@ message RecoveryDevice {
     optional RecoveryDeviceType type = 8;               // supported recovery type
     optional uint32 u2f_counter = 9;                    // U2F counter
     optional bool dry_run = 10;                         // perform dry-run recovery workflow (for safe mnemonic validation)
+    optional string mnemonic = 11;
     /**
      * Type of recovery procedure. These should be used as bitmask, e.g.,
      * `RecoveryDeviceType_ScrambledWords | RecoveryDeviceType_Matrix`
