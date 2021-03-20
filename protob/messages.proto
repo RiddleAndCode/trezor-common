@@ -258,6 +258,12 @@ enum MessageType {
   MessageType_EphemeralPack = 975 [(wire_out) = true];
   MessageType_PutSeed = 974 [(wire_in) = true];
   MessageType_HashStellarTransaction = 973 [ (wire_in) = true ];
+  
+  MessageType_GetLiquidAddress = 972 [ (wire_in) = true ];
+  MessageType_LiquidAddress = 971 [ (wire_out) = true ];
+  MessageType_SignLiquidTx = 970 [ (wire_in) = true ];
+  MessageType_SignedLiquidTx = 969 [ (wire_out) = true ];
+
 
 }
 
