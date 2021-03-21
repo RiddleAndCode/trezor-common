@@ -44,12 +44,12 @@ message SignLiquidTx {
   message LiquidOutput {
     required string destination = 1;
     required uint64 value = 2;
-    repeated bytes asset = 3;  
+    required bytes asset = 3;  
   }
 
   message LiquidFee {
     required uint64 value = 1;
-    repeated bytes asset = 3;  
+    required bytes asset = 3;  
   }  
 }
 
